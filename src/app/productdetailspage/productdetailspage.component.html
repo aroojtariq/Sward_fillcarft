@@ -1,0 +1,58 @@
+<section style="background-color: #E9E9E9;padding-left: 10vw;">
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<app-productdetails-table></app-productdetails-table>
+		</div>
+	</div>
+</div>
+<div class="container" style=" padding-left:8vw;padding-right: 3vw;margin-top: 5vw;padding-bottom: 6vw">
+	<div class="row d-flex ">
+		<div class="col-3 d-flex flex-column " >
+			<div class="row">
+				<div class="col-12">
+					<app-productdetails-accordian></app-productdetails-accordian>
+					<app-productdetails-hotsale></app-productdetails-hotsale>
+				</div>
+			</div>
+		</div>
+		<div class="col-9" style="padding-left: 1.2vw;">
+			 <app-productdetails-descriptionbox></app-productdetails-descriptionbox>
+		</div>
+	</div>
+</div>
+</section>
+<section style="padding-left: 10vw;">
+    <div class="container related-products " style="padding: 2vw;">
+        <h3>RELATED PRODUCTS</h3>
+        <p>Loram ipsum dollar amet,consectetuer adipiscing</p>
+        <div class="row d-flex justify-content-around">
+        	<div class="col-2 box" *ngFor="let slide of hotsalesdata" >
+				
+					<div class="card-img">
+						<img src="assets/images/productdetails.png" alt="description image" class="img-fluid">
+					</div>
+	
+					<div class="middle">
+						<div class="icon">
+						  <i class="fa fa-heart-o" aria-hidden="true"></i>
+						  <i (click)="adduser(slide.swordname , slide.swordprice )" class="fa fa-shopping-bag" aria-hidden="true"></i>
+						  <i  routerLink="/productdetailspage" class="fa fa-eye" aria-hidden="true"></i>
+						</div>
+					 </div>
+					
+					<div class="card-body">
+						<span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+						<h4>{{slide.swordname}}</h4>
+						<p>${{slide.swordprice}}</p>
+					</div>
+
+        	</div>
+       	</div>
+    </div>
+</section>
+<app-productdetails-subscribe></app-productdetails-subscribe>

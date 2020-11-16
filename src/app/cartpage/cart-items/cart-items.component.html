@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row justify-content-center align-self-center pl-3">
+    
+    
+      <div class="container d-flex flex-column justify-content-center align-items-left pt-3 pb-3 pr-3 pl-3" style="background-color:  #f3f3f3;">
+         <h1>SHOPPING CART</h1>
+         
+         <!--cart heading-->
+         <div class="row d-flex justify-content-around align-items-left mt-3">
+           
+           <div class="col-sm-1 col-lg-1 justify-content-center align-self-center" style="border: 2px solid red;">
+             
+           </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center" style="border: 2px solid red;">
+             <h6 class="product-heading">PRODUCT NAME</h6>
+           </div>
+         
+           <div class="col-sm-12 col-lg-1 justify-content-center align-self-center" style="border: 2px solid red;">
+             <p class="product-heading">UNIT PRICE</p>
+           </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center" style="border: 2px solid red">
+             <p class="product-heading">QUANTITY</p>
+           </div>
+ 
+          <div class="col-sm-12 col-lg-1 justify-content-center align-self-center" style="border: 2px solid red;"> 
+             <p class="product-heading">SUBTOTAL</p>
+          </div>
+        </div>
+         
+         
+        <!--cart items--> 
+         <div class="row d-flex justify-content-around align-items-left mt-3" *ngFor="let u of cartitems">
+           
+           <div class="col-sm-1 col-lg-1 justify-content-center align-self-center" style="border: 2px solid red;">
+             <img src="assets/images/productgallery.png" class="img-fluid cart-img"/>
+              <div class="col-1 justify-content-center align-items-center cart-cancelbtndiv">
+                <button (click)="removeitem(u.name)" class="cart-cancelbtn" >x</button>
+              </div>
+            </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center" style="border: 2px solid red;">
+             <h6 class="product-detail">{{u.name}}</h6>
+           </div>
+         
+           <div class="col-sm-12 col-lg-1 justify-content-center align-self-center" style="border: 2px solid red;">
+             <p class="product-detail">${{u.price}}</p>
+           </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center  " style="border: 2px solid red">
+             <div class="spinner-input" >
+                <div style="display: flex;">
+                   <input type="text" class="num" value={{u.quantity}}>
+                   <div class="minus cursor_hover">&#45;</div>
+                   <div  class="plus cursor_hover">&#43;</div>
+                 </div>
+             </div>
+           </div>
+ 
+          <div class="col-sm-12 col-lg-1 justify-content-center align-self-center" style="border: 2px solid red;"> 
+             <p class="product-detail">${{u.price * u.quantity}}</p>
+          </div>
+          
+          <br>
+          <div class="col-12" style="border-top: .25vw solid #E9E9E9;width: 100%;margin-top: .9vw;"></div>
+
+       </div>
+       <button class="checkout-btn" routerLink="/placeorderpage">CHECKOUT</button>
+     </div>
+  
+ 
+ </div>
+ </div>

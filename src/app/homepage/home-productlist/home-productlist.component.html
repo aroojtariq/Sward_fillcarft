@@ -1,0 +1,60 @@
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center shadow pl-5 py-5" style="background-color: #E9E9E9;">
+      <div class="row product-header">
+        <div class="col-12">
+                 <h1>FEATURED PRODUCTS </h1>
+        </div>
+
+      </div>
+      <div class=" row product-header">
+          <div class="col-12" style="display: flex; column-gap: 11vw;">
+             <p>Loram ipsum dollar amet,consectetuer adipiscing</p>
+             <div style="display: flex;column-gap: 1.5vw;">
+               <p> <del style="color: orange">NEW ARRIVALS</del></p>
+               <p>BEST SELLER</p>
+               <p>POPULAR</p>
+               <p>SPECIAL OFFER</p>
+               <p>LIMITED EDITION</p>
+             </div>
+          </div>
+      </div>
+
+      <div class="row product-image d-flex justify-content-center" style="margin-top: 1vw">
+             <div class="col-9">
+               <div class="row">
+                 <div class="col-3" *ngFor="let slide of slideData" >
+                    <div class="box">
+                        <img src={{slide.image}} alt="arrow2.png" class="img-fluid product-img">
+                         
+                        <div class="middle">
+                           <div class="icon">
+                             <i class="fa fa-heart-o" aria-hidden="true"></i>
+                             <i (click)="adduser(slide.name , slide.price )" class="fa fa-shopping-bag" aria-hidden="true"></i>
+                             <i  routerLink="/productdetailspage" class="fa fa-eye" aria-hidden="true"></i>
+                           </div>
+                        </div>
+
+                        <div class="outofstock">
+                           <p>OUT OF STOCK</p>
+                        </div>
+
+                        <div class="sale">
+                          <p>SALE</p>
+                        </div>
+                         
+
+                        <div class="sword-details">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <h1> {{slide.name}}</h1>
+                            <p>${{slide.price}}</p>
+                        </div>
+                    </div>
+               </div>
+             </div>         
+      </div>
+            
+     </div>
+  </div>
